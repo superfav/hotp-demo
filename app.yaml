@@ -1,0 +1,50 @@
+#    This file is part of hotp-demo.
+# 
+#    hotp-demo is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    hotp-demo is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
+application: hotpdemo
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+ - url: /create
+   script: main.py
+   login: required
+
+ - url: /list
+   script: main.py
+   login: required
+
+ - url: /verify
+   script: main.py
+   login: required
+
+ - url: /delete
+   script: main.py
+   login: required
+
+ - url: /
+   static_files: templates/index.html
+   upload: templates/index.html
+
+ - url: /css
+   static_dir: css
+
+ - url: /images
+   static_dir: images
+
+ - url: /favicon.ico
+   static_files: images/favicon.ico
+   upload: images/favicon.ico
